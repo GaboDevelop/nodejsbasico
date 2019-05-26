@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const { PORT } = require("./config");
 
-require("./routes/views")(app);
+//es importante que /api sea primero que route
 require("./routes/api")(app);
+require("./routes/views")(app);
+
 
 function init(){
     console.log("Iniciando instancia de Express...");
